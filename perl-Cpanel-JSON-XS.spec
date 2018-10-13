@@ -4,16 +4,16 @@
 #
 Name     : perl-Cpanel-JSON-XS
 Version  : 4.06
-Release  : 3
+Release  : 4
 URL      : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/Cpanel-JSON-XS-4.06.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/Cpanel-JSON-XS-4.06.tar.gz
 Summary  : 'cPanel fork of JSON::XS, fast and correct serializing'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
-Requires: perl-Cpanel-JSON-XS-bin
-Requires: perl-Cpanel-JSON-XS-lib
-Requires: perl-Cpanel-JSON-XS-license
-Requires: perl-Cpanel-JSON-XS-man
+Requires: perl-Cpanel-JSON-XS-bin = %{version}-%{release}
+Requires: perl-Cpanel-JSON-XS-lib = %{version}-%{release}
+Requires: perl-Cpanel-JSON-XS-license = %{version}-%{release}
+Requires: perl-Cpanel-JSON-XS-man = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -25,8 +25,8 @@ use Cpanel::JSON::XS;
 %package bin
 Summary: bin components for the perl-Cpanel-JSON-XS package.
 Group: Binaries
-Requires: perl-Cpanel-JSON-XS-license
-Requires: perl-Cpanel-JSON-XS-man
+Requires: perl-Cpanel-JSON-XS-license = %{version}-%{release}
+Requires: perl-Cpanel-JSON-XS-man = %{version}-%{release}
 
 %description bin
 bin components for the perl-Cpanel-JSON-XS package.
@@ -35,9 +35,9 @@ bin components for the perl-Cpanel-JSON-XS package.
 %package dev
 Summary: dev components for the perl-Cpanel-JSON-XS package.
 Group: Development
-Requires: perl-Cpanel-JSON-XS-lib
-Requires: perl-Cpanel-JSON-XS-bin
-Provides: perl-Cpanel-JSON-XS-devel
+Requires: perl-Cpanel-JSON-XS-lib = %{version}-%{release}
+Requires: perl-Cpanel-JSON-XS-bin = %{version}-%{release}
+Provides: perl-Cpanel-JSON-XS-devel = %{version}-%{release}
 
 %description dev
 dev components for the perl-Cpanel-JSON-XS package.
@@ -46,7 +46,7 @@ dev components for the perl-Cpanel-JSON-XS package.
 %package lib
 Summary: lib components for the perl-Cpanel-JSON-XS package.
 Group: Libraries
-Requires: perl-Cpanel-JSON-XS-license
+Requires: perl-Cpanel-JSON-XS-license = %{version}-%{release}
 
 %description lib
 lib components for the perl-Cpanel-JSON-XS package.
@@ -93,12 +93,12 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/perl-Cpanel-JSON-XS
-cp COPYING %{buildroot}/usr/share/doc/perl-Cpanel-JSON-XS/COPYING
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Cpanel-JSON-XS
+cp COPYING %{buildroot}/usr/share/package-licenses/perl-Cpanel-JSON-XS/COPYING
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -107,9 +107,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/Cpanel/JSON/XS.pm
-/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/Cpanel/JSON/XS/Boolean.pm
-/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/Cpanel/JSON/XS/Type.pm
+/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/Cpanel/JSON/XS.pm
+/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/Cpanel/JSON/XS/Boolean.pm
+/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/Cpanel/JSON/XS/Type.pm
 
 %files bin
 %defattr(-,root,root,-)
@@ -123,12 +123,12 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/auto/Cpanel/JSON/XS/XS.so
+/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/auto/Cpanel/JSON/XS/XS.so
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/perl-Cpanel-JSON-XS/COPYING
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Cpanel-JSON-XS/COPYING
 
 %files man
-%defattr(-,root,root,-)
+%defattr(0644,root,root,0755)
 /usr/share/man/man1/cpanel_json_xs.1
