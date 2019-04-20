@@ -107,9 +107,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.1/x86_64-linux-thread-multi/Cpanel/JSON/XS.pm
-/usr/lib/perl5/vendor_perl/5.28.1/x86_64-linux-thread-multi/Cpanel/JSON/XS/Boolean.pm
-/usr/lib/perl5/vendor_perl/5.28.1/x86_64-linux-thread-multi/Cpanel/JSON/XS/Type.pm
+/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/Cpanel/JSON/XS.pm
+/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/Cpanel/JSON/XS/Boolean.pm
+/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/Cpanel/JSON/XS/Type.pm
 
 %files bin
 %defattr(-,root,root,-)
@@ -123,7 +123,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.1/x86_64-linux-thread-multi/auto/Cpanel/JSON/XS/XS.so
+/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/auto/Cpanel/JSON/XS/XS.so
 
 %files license
 %defattr(0644,root,root,0755)
