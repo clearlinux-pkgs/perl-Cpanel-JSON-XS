@@ -4,10 +4,10 @@
 #
 Name     : perl-Cpanel-JSON-XS
 Version  : 4.19
-Release  : 27
+Release  : 28
 URL      : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/Cpanel-JSON-XS-4.19.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/Cpanel-JSON-XS-4.19.tar.gz
-Summary  : cPanel fork of JSON::XS, fast and correct serializing
+Summary  : 'cPanel fork of JSON::XS, fast and correct serializing'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Cpanel-JSON-XS-bin = %{version}-%{release}
@@ -36,7 +36,6 @@ Summary: dev components for the perl-Cpanel-JSON-XS package.
 Group: Development
 Requires: perl-Cpanel-JSON-XS-bin = %{version}-%{release}
 Provides: perl-Cpanel-JSON-XS-devel = %{version}-%{release}
-Requires: perl-Cpanel-JSON-XS = %{version}-%{release}
 Requires: perl-Cpanel-JSON-XS = %{version}-%{release}
 
 %description dev
@@ -129,7 +128,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/Cpanel/JSON/XS.pm
-/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/Cpanel/JSON/XS/Boolean.pm
-/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/Cpanel/JSON/XS/Type.pm
-/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/auto/Cpanel/JSON/XS/XS.so
+/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Cpanel/JSON/XS.pm
+/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Cpanel/JSON/XS/Boolean.pm
+/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Cpanel/JSON/XS/Type.pm
+/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/auto/Cpanel/JSON/XS/XS.so
