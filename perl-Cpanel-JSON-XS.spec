@@ -5,7 +5,7 @@
 #
 Name     : perl-Cpanel-JSON-XS
 Version  : 4.37
-Release  : 55
+Release  : 56
 URL      : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/Cpanel-JSON-XS-4.37.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/Cpanel-JSON-XS-4.37.tar.gz
 Summary  : 'cPanel fork of JSON::XS, fast and correct serializing'
